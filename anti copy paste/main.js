@@ -1,7 +1,7 @@
 // function noSelect() {
 //     return false
 // }
-window.onselectstart =  () =>{
+window.onselectstart = () => {
     return false
 }
 
@@ -15,6 +15,13 @@ document.addEventListener('contextmenu', (e) => {
 
     e.preventDefault();
     // e.stopPropagation()
+
+    Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Anda Gak Boleh Copy Paste',
+
+    })
 })
 // if (window.sidebar) {
 //     document.onmousemove = noSelect;
