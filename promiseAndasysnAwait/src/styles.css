@@ -1,0 +1,30 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.btn-login {
+  width: 150px;
+  height: 30px;
+  background-color: aqua;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: sans-serif;
+  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+.btn-login:hover {
+  color: grey;
+  background-color: rgb(1, 121, 121);
+  cursor: pointer;
+}
+hr {
+  height: 5px;
+  background-color: rgb(238, 238, 238);
+  border: none;
+  border-radius: 3px;
+}
