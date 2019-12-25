@@ -1,80 +1,64 @@
 // const talk = document.querySelector('.talk');
 
-const content = document.querySelector('.content')
+const content = document.querySelector(".content");
 
+const greetings = ["i sick bitcess", "i fine thankyou", "blal bla bla bla bla"];
 
-const greetings = ['i sick bitcess', 'i fine thankyou',
-    'blal bla bla bla bla'
-]
+const belanja = [
+  "ini berapa harganya",
+  "aku mau cari barang ini",
+  "barang ini ada gak"
+];
 
+const SpeechRecognation =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
 
-const belanja = ['ini berapa harganya', 'aku mau cari barang ini', 'barang ini ada gak']
+const recognition = new SpeechRecognation();
 
-const SpeechRecognation = window.SpeechRecognition || window.webkitSpeechRecognition
+recognition.onstart = function() {
+  console.log("suara aktip,kau bisa bicara");
+};
 
+recognition.onresult = function(e) {
+  console.log(e);
 
-const recognition = new SpeechRecognation()
+  const current = e.resultIndex;
 
-recognition.onstart = function () {
-    console.log('suara aktip,kau bisa bicara');
+  const transcript = e.results[current][0].transcript;
 
-}
-
-recognition.onresult = function (e) {
-    console.log(e);
-
-    const current = e.resultIndex
-
-    const transcript = e.results[current][0].transcript
-
-    content.textContent = transcript
-    readOutLoad(transcript)
-
-}
+  content.textContent = transcript;
+  readOutLoad(transcript);
+};
 
 // const tombol = false
-window.addEventListener('keydown', (e) => {
-    if (e.which == 32 || e.keyCode == 32) {
-
-
-
-        recognition.start()
-
-    }
-})
-
+window.addEventListener("keydown", e => {
+  if (e.which == 32 || e.keyCode == 32) {
+    recognition.start();
+  }
+});
 
 function readOutLoad(msg) {
-    const speech = new SpeechSynthesisUtterance()
+  const speech = new SpeechSynthesisUtterance();
 
+  speech.text = msg;
+  if (msg.includes("apa kabar bro")) {
+    const finalText = greetings[Math.floor(Math.random() * greetings.length)];
 
-    speech.text = msg
-    if (msg.includes('apa kabar bro')) {
-        const finalText = greetings[Math.floor(Math.random() * greetings.length)]
+    speech.text = finalText;
+  }
+  if (msg.includes("something good")) {
+    const finalText = belanja[Math.floor(Math.random() * belanja.length)];
 
-        speech.text = finalText
+    speech.text = finalText;
+  }
 
+  speech.volume = 1;
+  speech.rate = 1;
+  speech.pitch = 1;
+  speech.lang = "ja";
 
-    }
-    if (msg.includes('something good')) {
-        const finalText = belanja[Math.floor(Math.random() * belanja.length)]
-
-        speech.text = finalText
-
-
-    }
-
-
-
-    speech.volume = 1
-    speech.rate = 1
-    speech.pitch = 1
-    speech.lang = 'id'
-
-    window.speechSynthesis.speak(speech)
-
+  window.speechSynthesis.speak(speech);
 }
-
 
 // lang
 // Afrikaans af

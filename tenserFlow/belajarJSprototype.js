@@ -3,8 +3,6 @@
 // function olahraga(energi, name) {
 //     // let mahasiswa = Object.create()
 
-
-
 //     this.energi = energi;
 //     this.name = name;
 // }
@@ -25,37 +23,32 @@
 //     return `hallo ${this.nama},selamat tidur`;
 // }
 
-
 // let cahya = new olahraga(20, "cahya");
-
 
 // classs
 
 class Mahasiswa {
-    constructor(nama, energi) {
-        this.nama = nama;
-        this.energi = energi;
+  constructor(nama, energi) {
+    this.nama = nama;
+    this.energi = energi;
+  }
 
-    }
+  makan(porsi) {
+    this.energi += porsi;
+    return `Hllo ${this.nama},Selamat makan`;
+  }
 
-    makan(porsi) {
-        this.energi += porsi;
-        return `Hllo ${this.nama},Selamat makan`;
-    }
-
-    main(jam) {
-        this.energi -= jam;
-        return `Hllo ${this.nama},Selamat bermain`;
-    }
-    tidur(jam) {
-        this.energi += jam * 2;
-        return `Hllo ${this.nama},Selamat Tidur`;
-    }
-
+  main(jam) {
+    this.energi -= jam;
+    return `Hllo ${this.nama},Selamat bermain`;
+  }
+  tidur(jam) {
+    this.energi += jam * 2;
+    return `Hllo ${this.nama},Selamat Tidur`;
+  }
 }
 
-let cahya = new Mahasiswa('cahya', 10);
-
+let cahya = new Mahasiswa("cahya", 10);
 
 let angka = [5, 2, 3];
-console.log(angka.push);
+console.log(cahya);
