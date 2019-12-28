@@ -27,14 +27,14 @@ setInterval(() => {
   for (let i = 0; i < gambar.length; i++) {
     img.src = "img/" + gambar[i];
   }
-  // gambar.forEach(g => (img.src = "img/" + g));
+  gambar.forEach(g => (img.src = "img/" + g));
 }, 500);
 
-const total = document.querySelector(".total");
-const used = document.querySelector(".used");
-const limit = document.querySelector(".limit");
-total.textContent = srypo.totalJSHeapSize;
-used.textContent = srypo.usedJSHeapSize;
-limit.textContent = srypo.jsHeapSizeLimit;
+// const total = document.querySelector(".total");
+// const used = document.querySelector(".used");
+// const limit = document.querySelector(".limit");
+// total.textContent = srypo.totalJSHeapSize;
+// used.textContent = srypo.usedJSHeapSize;
+// limit.textContent = srypo.jsHeapSizeLimit;
 
 // console.log(a);
