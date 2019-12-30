@@ -43,9 +43,12 @@ nav a:hover {
 }
 
 .jumbotron img {
+  position: relative;
+  opacity: 0;
   background-size: cover;
   width: 100%;
   height: 800px;
+  transition: 0.5s ease-in-out;
 }
 
 h1 {
@@ -53,13 +56,14 @@ h1 {
 }
 
 .about {
+  overflow: hidden;
 }
-
-p {
+.about p {
+  position: relative;
+  left: -100%;
   margin: 10px;
   padding: 10px;
   font-family: sans-serif;
+  transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition-delay: 0.5s;
 }
-
-
-
